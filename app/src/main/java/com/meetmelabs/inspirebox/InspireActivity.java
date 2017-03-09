@@ -51,6 +51,7 @@ public class InspireActivity extends SupportActivity {
         }
 
 
+        RandomWord.analyze(this);
         findViewById(R.id.root_container).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,6 +61,7 @@ public class InspireActivity extends SupportActivity {
     }
 
     public void showNextImage() {
+        Log.v(TAG, "random word " + RandomWord.getRandomWord(this));
         for (ViewGroup vg : mContainers) {
             vg.removeAllViews();
             vg.setVisibility(View.GONE);
